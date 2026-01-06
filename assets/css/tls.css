@@ -1,0 +1,36 @@
+:root {
+    /* Light theme colors */
+    /* Bytt ut färger */
+  --color-primary: #291f26;
+  /* --color-primary-hover: #b91c3c; */
+  /* --color-border: #663399; */
+  /* --color-callout: #1e90ff; */
+  /* --color-text: #232333; */
+  /* --color-text-muted: #737373; */
+  /* --color-text-meta: #999999; */
+  /* --color-background: #ffffff; */
+  /* --color-background-code: #f1f1f1; */
+  /* --color-background-pre: #ececec; */
+  /* --color-background-toc: #ececec; */
+  /* --color-background-draft: #f9f2f4; */
+  
+  /* /\* Dark theme colors *\/ */
+  /* --color-primary-dark: #50fa7b; */
+  /* --color-primary-hover-dark: #3dd458; */
+  /* --color-border-dark: #0066ff; */
+  /* --color-text-dark: #ffffff; */
+  /* --color-text-muted-dark: #dddddd; */
+  /* --color-background-dark: #202124; */
+  /* --color-background-code-dark: #3a3a3a; */
+  /* --color-background-pre-dark: #272822; */
+  /* --color-background-toc-dark: #272822; */
+  /* --color-background-draft-dark: #0066ff; */
+  
+  /* /\* Spacing and sizing *\/ */
+  /* --content-max-width: 800px; */
+  /* --content-padding: 1ch; */
+  /* --border-radius: 5px; */
+  /* --font-size-base: 15px; */
+  /* --line-height-base: 1.6; */
+  /* --line-height-content: 1.5; */
+}
