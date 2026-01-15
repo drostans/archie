@@ -112,9 +112,9 @@
 	    {{- else if (hasPrefix . "<script")}}
     {{ .| safeHTML }}
 	{{- else }}
-	                               <script src="{{ absURL . }}"></script>
-	    {{- end }}
-	    {{- end }}
+	<script src="{{ absURL . }}"></script>
+	{{- end }}
+	{{- end }}
 
         <!-- WebSite Schema for Google Site Name -->
         <script type="application/ld+json">
