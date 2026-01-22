@@ -117,16 +117,17 @@
 	{{- end }}
 
         <!-- WebSite Schema for Google Site Name -->
-        <script type="application/ld+json">
-         {
-             "@context": "https://schema.org",
-             "@type": "WebSite",
-             "name": "Tobias Lidman-Strauss",
-             "alternateName": "TLS",
-             "url": "https://tobias.lidman-strauss.se/"
-         }
-        </script>
-        
-        <link rel="icon" type="image/x-icon" href="/favicon.ico">
-        
+    <script type="application/ld+json">
+     {
+         "@context": "https://schema.org",
+         "@type": "WebSite",
+         "name": "Tobias Lidman-Strauss",
+         "alternateName": "TLS",
+         "url": "https://tobias.lidman-strauss.se/"
+     }
+    </script>
+    
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="canonical" href="{{ .Permalink }}">
+    
 </head>
