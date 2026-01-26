@@ -1,6 +1,6 @@
 :root {
     /* Light theme colors */
-  /* --color-primary: #291f26; */
+  --color-primary: #ef80bf;
   /* --color-primary-hover: #b91c3c; */
   /* --color-border: #663399; */
   /* --color-callout: #1e90ff; */
@@ -112,5 +112,16 @@
 .highlight .vi { color: #e5b76f } /* Name.Variable.Instance */
 .highlight .vm { color: #e5b76f } /* Name.Variable.Magic */
 .highlight .il { color: #8fa5f6; font-weight: bold } /* Literal.Number.Integer.Long */
+
+
+
+@supports (border-block-start: 3px dotted) {
+  hr {
+    border-top: unset;
+    margin-top: 6em;
+    margin-bottom: 1em;
+    border-block-start: 3px dotted;
+  }
+}
 
 }
