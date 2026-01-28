@@ -19,33 +19,30 @@
 
 <div class="list">
     <h2>Writing here</h2>
-    <p>Thoughts I've gathered in private</p>
+    <p>Thoughts I've gathered in private.</p>
 </div>
 <ul class="posts">
 {{ $pages := where .Site.RegularPages "Type" "in" .Site.Params.section_writing }}
-{{ $paginator := .Paginate (where $pages "Params.hidden" "ne" true) }}
-{{ range $paginator.Pages }}
+{{ range where $pages "Params.hidden" "ne" true }}
 <section class="list-item">
 	<h3 class="title"><a href="{{ .RelPermalink }}">{{.Title}}</a></h3>
     <p>{{ template "partials/pagedescription.html" . }}</p>
-	<a class="readmore" href="{{ .RelPermalink }}">Read more ⟶</a>
+	<!-- <a class="readmore" href="{{ .RelPermalink }}">Read more ⟶</a> -->
 </section>
 {{ end }}
-{{ template "partials/paginator.html" . }}
 </ul>
-
 <div class="list">
-    <h2>Architectural projects I've worked on</h2>
-    <p>Things I've written in other places</p>
+    <h2>Writing elsewhere</h2>
+    <p>Things I've written in other places.</p>
 </div>
 <ul class="posts">
-{{ range first 5 .Site.Data.external_architecture.entries }}
+{{ range first 5 .Site.Data.external_writing.entries }}
 <section class="list-item">
     <h3 class="title"><a href="{{ .url }}">{{ .title }}</a></h3>
     {{ with .description }}
     <p>{{ . }}</p>
     {{ end }}
-    <a class="readmore" href="{{ .url }}">Read more ⟶</a>
+    <!-- <a class="readmore" href="{{ .url }}">Read more ⟶</a> -->
 </section>
 {{ end }}
 
