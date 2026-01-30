@@ -23,25 +23,20 @@
 <div class="list">
     <h2>Writing here</h2>
     <p>Thoughts I've gathered in private.</p>
-</div>
 
-<ul class="posts">
 {{ $pages := where .Site.RegularPages "Type" "in" .Site.Params.section_writing }}
 {{ range where $pages "Params.hidden" "ne" true }}
 <section class="list-item">
 	<h3 class="title"><a href="{{ .RelPermalink }}">{{.Title}}</a></h3>
-    <p>{{ template "partials/pagedescription.html" . }}</p>
+    {{ template "partials/pagedescription.html" . }}
 	<!-- <a class="readmore" href="{{ .RelPermalink }}">Read more ⟶</a> -->
 </section>
 {{ end }}
-</ul>
+</div>
 
 <div class="list">
     <h2>Writing elsewhere</h2>
     <p>Things I've written in other places.</p>
-</div>
-
-<ul class="posts">
 {{ range first 5 .Site.Data.external_writing.entries }}
 <section class="list-item">
     <h3 class="title"><a href="{{ .url }}">{{ .title }}</a></h3>
@@ -51,15 +46,11 @@
     <!-- <a class="readmore" href="{{ .url }}">Read more ⟶</a> -->
 </section>
 {{ end }}
-
-</ul>
+</div>
 
 <div class="list">
     <h2>Writing about me</h2>
     <p>Interviews and other texts about me.</p>
-</div>
-
-<ul class="posts">
 {{ range first 5 .Site.Data.external_press.entries }}
 <section class="list-item">
     <h3 class="title"><a href="{{ .url }}">{{ .title }}</a></h3>
@@ -69,6 +60,6 @@
     <!-- <a class="readmore" href="{{ .url }}">Read more ⟶</a> -->
 </section>
 {{ end }}
+</div>
 
-</ul>
 {{ end }}
