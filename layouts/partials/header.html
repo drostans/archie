@@ -1,6 +1,5 @@
 <head lang="{{ .Site.Language.Lang }}">
 	<meta charset="utf-8" />
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	{{- $title := ( .Title ) -}}
 	{{- $siteTitle := ( .Site.Title ) -}}
 	{{- if .IsHome -}}
@@ -10,7 +9,7 @@
 	{{- end -}}
 
 	{{- if isset .Site.Params "favicon" -}}
-	<link rel="icon" type="image/png" href={{ .Site.Params.favicon }} />
+	<link rel="icon" type="image/x-icon" href="{{ .Site.Params.favicon }}" />
 	{{- end -}}
 
     {{ if .Params.noindex }}
@@ -152,8 +151,6 @@
 }
 </script>
     
-    <link rel="icon" type="image/x-icon" href="/favicon.ico">
     <link rel="canonical" href="{{ .Permalink }}">
-    
     
 </head>
