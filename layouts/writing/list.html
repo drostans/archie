@@ -1,41 +1,42 @@
 {{ define "main" }}
-{{ if isset .Data "Term" }}
-<h1>Entries tagged - "{{ .Data.Term }}"</h1>
-{{ else }}
-<h1 class="page-title">Writing</h1>
-{{ end }}
-{{ .Content }}
-<!-- <h2>Read me:</h2>
-     <ul class="posts">
-	 {{- range .Data.Pages -}}
-	 {{- if (not (in (.Site.Params.excludedTypes | default (slice "page")) .Type)) -}}
-	 <li class="post">
-	 <a href="{{ .RelPermalink }}">{{.Title}}</a> <span class="meta">{{ dateFormat ":date_medium" .Date }}{{ if .Draft }} <span class="draft-label">DRAFT</span> {{ end }}</span>
-	 </li>
-	 {{- end -}}
-	 {{- end -}}
-     </ul>
--->
+
+<div class="post-container">
+    <div class="post-content">
+    <h1 class="page-title">Writing</h1>
+
+    {{ .Content }}
+
+    <!-- <h2>Read me:</h2>
+         <ul class="posts">
+	     {{- range .Data.Pages -}}
+	     {{- if (not (in (.Site.Params.excludedTypes | default (slice "page")) .Type)) -}}
+	     <li class="post">
+	     <a href="{{ .RelPermalink }}">{{.Title}}</a> <span class="meta">{{ dateFormat ":date_medium" .Date }}{{ if .Draft }} <span class="draft-label">DRAFT</span> {{ end }}</span>
+	     </li>
+	     {{- end -}}
+	     {{- end -}}
+         </ul>
+    -->
+    </div>
+</div>
 
 <div class="list">
     <h2>Writing here</h2>
     <p>Thoughts I've gathered in private.</p>
-</div>
-<ul class="posts">
+
 {{ $pages := where .Site.RegularPages "Type" "in" .Site.Params.section_writing }}
 {{ range where $pages "Params.hidden" "ne" true }}
 <section class="list-item">
 	<h3 class="title"><a href="{{ .RelPermalink }}">{{.Title}}</a></h3>
-    <p>{{ template "partials/pagedescription.html" . }}</p>
+    {{ template "partials/pagedescription.html" . }}
 	<!-- <a class="readmore" href="{{ .RelPermalink }}">Read more ⟶</a> -->
 </section>
 {{ end }}
-</ul>
+</div>
+
 <div class="list">
     <h2>Writing elsewhere</h2>
     <p>Things I've written in other places.</p>
-</div>
-<ul class="posts">
 {{ range first 5 .Site.Data.external_writing.entries }}
 <section class="list-item">
     <h3 class="title"><a href="{{ .url }}">{{ .title }}</a></h3>
@@ -45,7 +46,20 @@
     <!-- <a class="readmore" href="{{ .url }}">Read more ⟶</a> -->
 </section>
 {{ end }}
+</div>
 
-</ul>
+<div class="list">
+    <h2>Writing about me</h2>
+    <p>Interviews and other texts about me.</p>
+{{ range first 5 .Site.Data.external_press.entries }}
+<section class="list-item">
+    <h3 class="title"><a href="{{ .url }}">{{ .title }}</a></h3>
+    {{ with .description }}
+    <p>{{ . }}</p>
+    {{ end }}
+    <!-- <a class="readmore" href="{{ .url }}">Read more ⟶</a> -->
+</section>
+{{ end }}
+</div>
 
 {{ end }}
