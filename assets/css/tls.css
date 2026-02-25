@@ -144,6 +144,16 @@ h3, h4, h5, h6 {
   margin-top: 30px;
 }
 
+.img-small-center-themed {
+  width: 80%;
+  max-width: 400px;
+  display: block;
+  margin: auto;
+  border: 2px solid var(--color-text-muted-dark);
+  margin-top: 30px;
+  filter: grayscale(100%) sepia(100%) hue-rotate(10deg) saturate(150%);
+}
+
 }
 
 
