@@ -14,7 +14,9 @@
           {{ .Params.tldr }}
         </div>{{ end }}
         <section class="body">
-          {{ .Content }}
+          <!-- Original: {{ .Content }} -->
+          <!-- Lade in översatsig fix för att ta bort trailing slash -->
+          {{ .Content | replaceRE `<hr class="footnotes-separatator"/>` `<hr class="footnotes-separator">` | safeHTML }}
         </section>
         <div class="post-tags">
           {{ if ne .Type "page" }}
