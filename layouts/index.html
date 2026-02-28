@@ -44,14 +44,13 @@
                     <div class="list">
                     <h2>Personal picks</h2>
                     <p>Some things to read if you want to start getting to know me.</p>
-{{ $pages := where .Site.RegularPages "Type" "in" .Site.Params.section_writing }}
-
-{{ range where (sort $pages "Params.order" "asc") "Params.order" ">" "" }}
-  <section class="list-item">
-    <h3 class="title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
-    {{ template "partials/pagedescription.html" . }}
-  </section>
-{{ end }}
+                    {{ $pages := where .Site.RegularPages "Type" "in" .Site.Params.section_writing }}
+                    {{ range where (sort $pages "Params.order" "asc") "Params.order" ">" "" }}
+                    <section class="list-item">
+                        <h3 class="title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+                        {{ template "partials/pagedescription.html" . }}
+                    </section>
+                    {{ end }}
                 <!-- <div class="list">
                      <h1>Here are my latest blog posts:</h1>
                      </div>
@@ -67,11 +66,9 @@
 				     </section>
 				     {{ end }}
 				     {{ template "partials/paginator.html" . }} -->
-                        
+                    </div>     
                 </article>
 			</main>
 			{{ partial "footer.html" . }}
 		</div>
-		
-	</body>
 </html>
