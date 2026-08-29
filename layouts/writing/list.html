@@ -37,7 +37,7 @@
 <div class="list">
     <h2>Writing elsewhere</h2>
     <p>Things I've written in other places.</p>
-{{ range first 5 .Site.Data.external_writing.entries }}
+{{ range first 5 hugo.Data.external_writing.entries }}
 <section class="list-item">
     <h3 class="title"><a href="{{ .url }}">{{ .title }}</a></h3>
     {{ with .description }}
@@ -51,7 +51,7 @@
 <div class="list">
     <h2>Writing about me</h2>
     <p>Interviews and other texts about me.</p>
-{{ range first 5 .Site.Data.external_press.entries }}
+{{ range first 5 hugo.Data.external_press.entries }}
 <section class="list-item">
     <h3 class="title"><a href="{{ .url }}">{{ .title }}</a></h3>
     {{ with .description }}
