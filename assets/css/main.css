@@ -296,14 +296,13 @@ header .main {
 }
 
 /* Headings */
-/* NOTE: headings have no font-family here, so they inherit from `body`
-   (Fira Sans — see the body rule above). To give headings a different
-   font, uncomment and adjust the line below, e.g.:
-     font-family: 'Roboto Mono', 'Courier New', monospace;
+/* NOTE: headings use Roboto Mono (set below). Without this line they
+   would inherit Fira Sans from `body` (see the body rule above).
+   To change the heading font, edit the font-family below.
    Available @font-face families are defined in fonts.css:
    'Fira Sans', 'Roboto Mono', 'IBM Plex Mono'. */
 h1, h2, h3, h4, h5, h6 {
-  /* font-family: 'Fira Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; */
+  font-family: 'Roboto Mono', 'Courier New', monospace;
   font-size: 1.2rem;
   /* Fallback for older browsers */
   margin-top: 2em;
