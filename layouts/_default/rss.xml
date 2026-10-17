@@ -33,7 +33,9 @@
 				<link>{{ .Permalink }}</link>
 				<pubDate>{{ .PublishDate.Format "Mon, 02 Jan 2006 15:04:05 -0700" | safeHTML }}</pubDate>
 				<guid>{{ .Permalink }}</guid>
-				<description>{{ .Content | transform.XMLEscape | safeHTML }}</description>
+				{{/* go-org (Hugo's Org renderer) emits an empty <nav><ul></ul></nav> when every
+			     headline is :noexport: tagged. Strip it so the RSS description stays clean. */}}
+			<description>{{ .Content | replaceRE `(?s)<nav>\s*<ul>\s*</ul>\s*</nav>\s*` "" | transform.XMLEscape | safeHTML }}</description>
 			</item>
 		{{- end }}
 	</channel>

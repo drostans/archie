@@ -16,7 +16,9 @@
         <section class="body">
           <!-- Original: {{ .Content }} -->
           <!-- Lade in översatsig fix för att ta bort trailing slash -->
-          {{ .Content | replaceRE `<hr class="footnotes-separatator"/>` `<hr class="footnotes-separator">` | safeHTML }}
+          {{/* go-org (Hugo's Org renderer) emits an empty <nav><ul></ul></nav> when every
+               headline is :noexport: tagged. Strip it so it doesn't create a gap above the text. */}}
+          {{ .Content | replaceRE `<hr class="footnotes-separatator"/>` `<hr class="footnotes-separator">` | replaceRE `(?s)<nav>\s*<ul>\s*</ul>\s*</nav>\s*` "" | safeHTML }}
         </section>
         <div class="post-tags">
           {{ if ne .Type "page" }}
