@@ -1,6 +1,9 @@
 <head lang="{{ .Site.Language.Lang }}">
 	<meta charset="utf-8">
 	{{- $title := ( .Title ) -}}
+	{{- if eq .Kind "404" -}}
+	{{- $title = "This page can not be found." -}}
+	{{- end -}}
 	{{- $siteTitle := ( .Site.Title ) -}}
 	{{- if .IsHome -}}
 	<title>{{ $siteTitle }} | Home </title>

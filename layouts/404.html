@@ -1,0 +1,24 @@
+{{ define "main" }}
+<main>
+  <article>
+    <div class="post-container">
+      <div class="post-content">
+        <div class="title">
+          <h1 class="title">This page can not be found.</h1>
+        </div>
+        <section class="body">
+          <p>
+            If you want to read something else I've written
+            <a href="{{ "/writing/" | relLangURL }}">click here</a>.
+          </p>
+          <p>
+            And if you really think what you looked for should exist just
+            <a href="{{ "/contact/" | relLangURL }}">contact me</a>
+            and I'll see what I can do.
+          </p>
+        </section>
+      </div>
+    </div>
+  </article>
+</main>
+{{ end }}
